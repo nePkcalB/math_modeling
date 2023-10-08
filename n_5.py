@@ -1,21 +1,12 @@
-words = ['покрытая ...', 'кожиц..й', 'держится на ...', 
-         'ножк..', 'затянута ...', 'нижняя ...',  'шляпк..']
+a, b = list(map(int, input('Вводить 2 числа через пробел: ').split()))
+ost, chast = 0, 0
 
-s = f'Шляпка гриба, {words[0]} {words[1]}, '
-s += f'{words[2]} {words[3]} . Снизу шляпка {words[4]} '
-s += f'пленкой. Когда ее уберешь, откроется {words[5]} '
-s += f'сторона {words[6]} .'
+try:
+    ost = a%b
+    chast = a//b
 
-print(s)
+    print('Делится')
+    print(f'Частное = {chast}, остаток = {ost}') if ost != 0 \
+    else print(f'Частное = {chast}')
 
-for i in range(len(words)):
-    stroka = input(f'{words[i]}: ')
-    words[i] = words[i].replace('...', stroka, 1)
-    words[i] = words[i].replace('..', stroka, 1)
-
-s = f'Шляпка гриба, {words[0]} {words[1]}, '
-s += f'{words[2]} {words[3]}. Снизу шляпка {words[4]} '
-s += f'пленкой. Когда ее уберешь, откроется {words[5]} '
-s += f'сторона {words[6]}.'
-
-print(s)
+except: print('ERROR: second number is 0')
